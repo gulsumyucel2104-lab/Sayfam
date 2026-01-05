@@ -1,113 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gülsüm Yücel | Portfolyo</title>
     <style>
+        :root {
+            --lila: #a29bfe;
+            --pembe: #fd79a8;
+            --koyu-mor: #4a148c;
+            --arka-plan: linear-gradient(135deg, #fef1f8 0%, #e9d5ff 100%);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #333;
-    background-color: #fdfbff; /* Çok açık lila arka plan */
-}
+            font-family: 'Poppins', sans-serif;
+            background: var(--arka-plan);
+            background-attachment: fixed;
+            color: #333;
+            line-height: 1.6;
+        }
 
-/* Başlık Alanı */
-.header {
-    background-color: #a288e3; /* Lila renk */
-    color: white;
-    padding: 50px;
-}
+        /* Navigasyon */
+        nav {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-/* Menü Çubuğu */
-.menu {
-    background-color: #6e54b5; /* Koyu lila */
-    padding: 15px;
-}
+        nav a {
+            text-decoration: none;
+            color: var(--koyu-mor);
+            margin: 0 15px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    margin: 0 20px;
-    font-weight: bold;
-}
+        nav a:hover { color: var(--pembe); }
 
-/* Bölüm (Section) Ayarları */
-.section {
-    padding: 50px;
-}
+        /* Hero */
+        header {
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px;
+        }
 
-.gray-bg {
-    background-color: #f2ebff; /* Açık lila tonu */
-}
+        h1 { font-size: 3rem; color: var(--koyu-mor); margin-bottom: 10px; }
 
-/* Proje Kutuları */
-.proje-kutusu {
-    border: 2px solid #a288e3;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 20px auto;
-    width: 60%;
-    background-color: white;
-}
+        .container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
-/* Sayfa Altı (İletişim) */
-.footer {
-    background-color: #333;
-    color: white;
-    padding: 30px;
-}
+        section {
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            scroll-margin-top: 100px;
+        }
 
-h2 {
-    color: #6e54b5;
-}
+        h2 { color: var(--pembe); margin-bottom: 25px; border-bottom: 2px solid #fff; display: inline-block; }
+
+        /* Teknik Bilgi Kısmı (Yetenekler) */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .skill-tag {
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            color: var(--koyu-mor);
+            border: 1px solid var(--lila);
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--lila);
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        /* Proje Kartları */
+        .project-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 15px;
+            border-left: 5px solid var(--pembe);
+        }
+
+        .edu-box { margin-bottom: 20px; }
+        footer { text-align: center; padding: 40px; color: #777; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="Ekran görüntüsü 2026-01-04 212813.png" alt="Gülsüm Yücel" width="150" style="border-radius: 50%; border: 4px solid white; margin-bottom: 20px;">
-        <h1>Gülsüm Yücel</h1>
-    </div>
 
-    <div class="menu">
+    <nav>
         <a href="#hakkimda">Hakkımda</a>
-        <a href="#yetenekler">Yetenekler</a>
-        <a href="#projeler">Projeler</a>
-        <a href="#iletisim">İletişim</a>
-    </div>
+        <a href="#egitim">Eğitim</a>
+        <a href="#teknik">Teknik Bilgi</a>
+        <a href="#projeler">Projelerim</a>
+    </nav>
 
-    <div id="hakkimda" class="section">
-        <h2>Hakkımda</h2>
-        <p>Merhaba! Ben Gülsüm Yücel. İstanbul'da doğdum ve 20 yaşındayım. İstanbul Topkapı Üniversitesi Yönetim Bilişim Sistemleri bölümünde okuyorum. Aynı zamanda İstanbul Üniversitesinde Bilgisayar Programcılığı bölümünde önlisans eğitimime devam ediyorum.
-        Yazılım dünyasına olan merakım ve tasarım tutkumla kendimi her gün daha fazla geliştiriyorum. Modern teknolojileri kullanarak estetik ve fonksiyonel çözümler üretmeyi hedefliyorum.</p>
-    </div>
+    <header>
+        <h1>Gülsüm Yücel</h1>
+        <p>Yönetim Bilişim Sistemleri & Bilgisayar Programcılığı</p>
+    </header>
 
-    <div id="yetenekler" class="section gray-bg">
-        <h2>Yeteneklerim & Hobilerim</h2>
-        <p><b>Yetenekler:</b> HTML, CSS, SQL (Veri Tabanı)</p>
-        <p><b>Hobiler:</b> Fotoğraf çekmek, Çiçek bakımı, Yeni yerler keşfetmek</p>
-    </div>
-
-    <div id="projeler" class="section">
-        <h2>Projelerim</h2>
+    <div class="container">
         
-        <div class="proje-kutusu">
-            <h3>RoseFlowers</h3>
-            <p>Lila temalı çiçek satış sitesi tasarımı.</p>
-        </div>
+        <section id="hakkimda">
+            <h2>Hakkımda</h2>
+            <p>Ben Gülsüm Yücel. İstanbul'da doğdum ve 20 yaşındayım. İstanbul Topkapı Üniversitesi Yönetim Bilişim Sistemleri bölümünde okuyorum. Aynı zamanda İstanbul Üniversitesinde Bilgisayar Programcılığı bölümünde önlisans eğitimime devam ediyorum.
+                Yazılım dünyasına olan merakım ve tasarım tutkumla kendimi her gün daha fazla geliştiriyorum. Modern teknolojileri kullanarak estetik ve fonksiyonel çözümler üretmeyi hedefliyorum.</p>
+        </section>
 
-        <div class="proje-kutusu">
-            <h3>Veri Tabanı Projesi</h3>
-            <p>Okul dersi için hazırladığım SQL yönetim sistemi.</p>
-        </div>
+        <section id="egitim">
+            <h2>Eğitim Bilgilerim</h2>
+            <div class="edu-box">
+                <strong>İstanbul Topkapı Üniversitesi</strong>
+                <p>Yönetim Bilişim Sistemleri (Lisans) - 3. Sınıf</p>
+            </div>
+            <div class="edu-box">
+                <strong>İstanbul Üniversitesi</strong>
+                <p>Bilgisayar Programcılığı (Önlisans)</p>
+            </div>
+        </section>
+
+        <section id="teknik">
+            <h2>Teknik Bilgi</h2>
+            <p style="margin-bottom: 15px;">Kullandığım ve üzerinde çalışmalar yaptığım teknolojiler:</p>
+            <div class="skills-grid">
+                <div class="skill-tag">C Dili</div>
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">SQL Server</div>
+                <div class="skill-tag">HTML5</div>
+                <div class="skill-tag">CSS3</div>
+                <div class="skill-tag">Veri Tabanı</div>
+            </div>
+        </section>
+
+        <section id="projeler">
+            <h2>Projelerim</h2>
+            <div class="project-card">
+                <h3>SQL Server Veri Tabanı Tasarımı</h3>
+                <p>İlişkisel veritabanı mimarisi, T-SQL sorguları ve SQL Server üzerinde veritabanı optimizasyonu çalışmaları.</p>
+            </div>
+        </section>
+
     </div>
 
-    <div id="iletisim" class="footer">
-        <h2>İletişim</h2>
-        <p>Email: gulsumyucel2104@gmail.com</p>
-        <p>İstanbul / Türkiye</p>
-    </div>
+    <footer>
+        &copy; 2026 Gülsüm Yücel | Yazılım ve Tasarım
+    </footer>
+
 </body>
 </html>
